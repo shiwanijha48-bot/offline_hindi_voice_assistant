@@ -1,34 +1,33 @@
 # 🎙️ Offline Hindi Voice Assistant
 
-A lightweight, Python-based **offline voice assistant** that understands and responds in **Hindi**. Designed to work without continuous internet connectivity, the assistant leverages speech recognition and text-to-speech technologies to execute voice commands such as opening applications, performing searches, announcing the current time, and more.
+A simple **offline Hindi voice assistant** built using Python and the Vosk speech recognition toolkit. The assistant listens to Hindi voice commands through the microphone and responds using text-to-speech without requiring an active internet connection.
 
-This project demonstrates the integration of **Hindi speech recognition**, **natural voice interaction**, and **offline AI capabilities**, making voice technology more accessible to Hindi-speaking users.
+This project demonstrates how offline speech recognition and voice interaction can be implemented for Hindi language applications.
 
 ---
 
 ## ✨ Features
 
-* 🎤 Recognizes and processes **Hindi voice commands**
-* 🗣️ Responds with **Hindi text-to-speech output**
-* 🌐 Performs Google searches
-* 🔗 Opens websites and desktop applications
-* 🕒 Announces the current date and time
-* 🎵 Plays music on command
-* 📶 Works primarily **offline** using the Vosk speech recognition model
-* 💻 Simple and lightweight implementation using Python
+* 🎤 Recognizes Hindi voice commands offline
+* 🗣️ Responds using text-to-speech
+* 📶 Works without internet connectivity
+* 🕒 Tells the current time and date
+* 📅 Announces the current year and day
+* 😄 Responds to greetings and basic conversations
+* 😂 Tells a simple joke
+* 🔁 Repeats the previous response
+* 👋 Supports exit commands to close the assistant
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-| Category             | Technologies        |
-| -------------------- | ------------------- |
-| Programming Language | Python 3            |
-| Speech Recognition   | Vosk                |
-| Text-to-Speech       | pyttsx3 / eSpeak NG |
-| Audio Input          | SpeechRecognition   |
-| Web Automation       | pywhatkit           |
-| Operating System     | Windows/Linux       |
+* **Python 3**
+* **Vosk** – Offline Hindi speech recognition
+* **SoundDevice** – Microphone audio input
+* **pyttsx3** – Text-to-speech engine
+* **JSON** – Processing recognition output
+* **datetime** – Date and time utilities
 
 ---
 
@@ -37,10 +36,10 @@ This project demonstrates the integration of **Hindi speech recognition**, **nat
 ```text
 offline-hindi-voice-assistant/
 │
-├── vosk-model-small-hi-0.22/    # Hindi speech recognition model
-├── hindi_assistant.py           # Main application
-├── README.md
-└── requirements.txt
+├── vosk-model-small-hi-0.22/   # Hindi Vosk model
+├── hindi_assistant.py          # Main application
+├── requirements.txt
+└── README.md
 ```
 
 ---
@@ -60,7 +59,7 @@ cd offline_hindi_voice_assistant
 python -m venv venv
 ```
 
-Activate the environment:
+Activate it:
 
 **Windows**
 
@@ -68,7 +67,7 @@ Activate the environment:
 venv\Scripts\activate
 ```
 
-**Linux / macOS**
+**Linux/macOS**
 
 ```bash
 source venv/bin/activate
@@ -80,77 +79,109 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-If you don't have a `requirements.txt` file, install the packages manually:
+### 4. Download the Hindi Vosk Model
 
-```bash
-pip install SpeechRecognition pyttsx3 vosk pywhatkit pyaudio
+Download:
+
+https://alphacephei.com/vosk/models
+
+Use the model:
+
+```text
+vosk-model-small-hi-0.22
+```
+
+Extract it into the project directory so the structure looks like:
+
+```text
+offline-hindi-voice-assistant/
+├── vosk-model-small-hi-0.22/
+├── hindi_assistant.py
 ```
 
 ---
 
-## ▶️ Usage
+## ▶️ Running the Assistant
 
-Run the assistant using:
+Start the assistant using:
 
 ```bash
 python hindi_assistant.py
 ```
 
-Once started, speak your commands in Hindi.
+After launching, the assistant will display:
 
-### Example Commands
+```text
+हिंदी वॉइस असिस्टेंट शुरू हो गया है।
+```
 
-* "गूगल पर मौसम खोजो"
-* "समय बताओ"
-* "यूट्यूब खोलो"
-* "संगीत चलाओ"
-* "आज की तारीख बताओ"
+Then speak your commands in Hindi.
 
 ---
 
-## 📦 Dependencies
+## 🎤 Supported Commands
 
-* Python 3.11+
-* SpeechRecognition
-* Vosk
-* pyttsx3
-* eSpeak NG
-* pywhatkit (optional)
-* PyAudio
-
----
-
-## 🚀 Future Enhancements
-
-* Add support for more Hindi conversational commands
-* Integrate local large language models (LLMs)
-* Offline note-taking and reminders
-* WhatsApp and email automation
-* Multi-language support
-* GUI/Desktop interface
-
----
-
-## 🎯 Use Cases
-
-* Hands-free desktop assistance
-* Accessibility support for Hindi speakers
-* Educational projects on speech technologies
-* Demonstrating offline AI applications
-* Learning speech recognition and text-to-speech systems
+| Hindi Command | Action                           |
+| ------------- | -------------------------------- |
+| नमस्ते        | Greeting                         |
+| समय           | Tells current time               |
+| तारीख         | Tells current date               |
+| दिन           | Tells current day                |
+| साल           | Tells current year               |
+| नाम           | Introduces itself                |
+| मौसम          | Gives a default weather response |
+| कैसे हो       | Casual conversation              |
+| धन्यवाद       | Replies politely                 |
+| मदद           | Lists supported commands         |
+| चुटकुला       | Tells a joke                     |
+| फिर बोलो      | Repeats the previous response    |
+| किसने बनाया   | Explains its purpose             |
+| तुम कौन       | Introduces itself                |
+| अलविदा        | Exits the assistant              |
+| बंद           | Stops the assistant              |
 
 ---
 
-## 🤝 Contributing
+## 📦 Requirements
 
-Contributions, suggestions, and improvements are welcome.
+```text
+vosk
+sounddevice
+pyttsx3
+```
 
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Submit a Pull Request
+Install manually if needed:
 
+```bash
+pip install vosk sounddevice pyttsx3
+```
 
 ---
 
-### Building accessible voice technology for Hindi speakers through offline AI. 🇮🇳🎙️
+## 🚀 Future Improvements
+
+Possible enhancements include:
+
+* Opening desktop applications using voice commands
+* Web searching capabilities
+* Playing music automatically
+* Weather updates from APIs
+* Hindi question-answering using local language models
+* Support for additional Indian languages
+* Graphical user interface (GUI)
+
+---
+
+## 🎯 Learning Outcomes
+
+This project demonstrates:
+
+* Offline speech recognition in Hindi
+* Real-time microphone audio processing
+* Text-to-speech integration in Python
+* Building simple voice-controlled applications
+* Using Vosk for resource-efficient speech systems
+
+---
+
+### Empowering Hindi voice interaction through simple offline AI. 🇮🇳🎙️
